@@ -10,10 +10,10 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labelFontSize = MediaQuery.of(context).size.width / 20;
+    final labelFontSize = MediaQuery.of(context).size.height / 41;
     final dividerHeight = MediaQuery.of(context).size.height / 30;
 
-    final buttonFontSize = MediaQuery.of(context).size.width / 17;
+    final buttonFontSize = MediaQuery.of(context).size.height / 32;
     final buttonWidth = MediaQuery.of(context).size.width / 1.7;
     final buttonHeight = dividerHeight * 2.5;
 
@@ -55,6 +55,7 @@ class SettingsScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               padding: EdgeInsets.only(top: labelFontSize / 1.5),
                               child: DropdownButtonFormField(
+                                isDense: false,
                                   decoration: InputDecoration(
                                     focusedBorder: OutlineInputBorder(
                                       borderSide:
@@ -96,6 +97,7 @@ class SettingsScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               padding: EdgeInsets.only(top: labelFontSize / 1.5),
                               child: DropdownButtonFormField(
+                                  isDense: false,
                                   decoration: InputDecoration(
                                     focusedBorder: OutlineInputBorder(
                                       borderSide:
@@ -149,6 +151,7 @@ class SettingsScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               padding: EdgeInsets.only(top: labelFontSize / 1.5),
                               child: DropdownButtonFormField(
+                                  isDense: false,
                                   decoration: InputDecoration(
                                     focusedBorder: OutlineInputBorder(
                                       borderSide:

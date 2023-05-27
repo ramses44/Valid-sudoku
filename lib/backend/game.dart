@@ -87,7 +87,7 @@ class SudokuGame {
     sudoku.notifyListeners();
     updateDB();
 
-    return !mistake;
+    return !mistake || model.mistakes == null;
   }
 
   void changeNote(int number, int x, int y) {

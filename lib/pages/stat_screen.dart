@@ -27,11 +27,12 @@ class _StatScreenState extends State<StatScreen> {
     var theme = settings.theme;
     var games = Hive.box<SudokuGameModel>('games').values.take(1000).toList();
 
-    final labelFontSize = MediaQuery.of(context).size.width / 20;
+    final labelFontSize = MediaQuery.of(context).size.height / 41;
     final dividerHeight = MediaQuery.of(context).size.height / 30;
 
-    final buttonFontSize = MediaQuery.of(context).size.width / 17;
+    final buttonFontSize = MediaQuery.of(context).size.height / 32;
     final buttonWidth = MediaQuery.of(context).size.width / 1.7;
+    final buttonHeight = dividerHeight * 2;
 
     final statLabelWidth = MediaQuery.of(context).size.width / 1.2;
     final statLabelHeight = MediaQuery.of(context).size.height / 3;
@@ -68,6 +69,7 @@ class _StatScreenState extends State<StatScreen> {
                                 alignment: Alignment.center,
                                 padding: EdgeInsets.only(top: labelFontSize / 1.5),
                                 child: DropdownButtonFormField(
+                                    isDense: false,
                                     decoration: InputDecoration(
                                       focusedBorder: OutlineInputBorder(
                                         borderSide:
@@ -113,6 +115,7 @@ class _StatScreenState extends State<StatScreen> {
                                 alignment: Alignment.center,
                                 padding: EdgeInsets.only(top: labelFontSize / 1.5),
                                 child: DropdownButtonFormField(
+                                    isDense: false,
                                     decoration: InputDecoration(
                                       focusedBorder: OutlineInputBorder(
                                         borderSide:

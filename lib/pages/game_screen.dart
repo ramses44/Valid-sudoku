@@ -88,10 +88,32 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Settings settings = Hive.box<Settings>('settings').values.first;
+    var lang = settings.language;
+    var theme = settings.theme;
+
+    final timerFieldHeight = MediaQuery.of(context).size.height / 10;
+
+    final cellSize = min(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height) / (sudoku.size() + 2);
+    final tableFontSize = MediaQuery.of(context).size.height / 13 / sudoku.subSize();
+    final noteInCellWidth = cellSize / sudoku.subSize(), noteInCellHeight = cellSize / (sudoku.subSize() + 0.5);
+    final noteFontSize = tableFontSize * 1.2 / sudoku.subSize();
+
+    final numberButtonFontSize = MediaQuery.of(context).size.height / 30;
+    final numberButtonSize = MediaQuery.of(context).size.width / (min(kMaxButtonsInRow, sudoku.size()) + 2);
+
+    final actionButtonSize = MediaQuery.of(context).size.width / 3.5;
+    final actionButtonFontSize = MediaQuery.of(context).size.width / 30;
+
+    final dividerHeight = cellSize;
+
+    final bannerHeight = MediaQuery.of(context).size.height * 0.9 - timerFieldHeight * 1.4 - cellSize * sudoku.size() - numberButtonSize * (sudoku.size() ~/ kMaxButtonsInRow) - actionButtonSize - dividerHeight * 2;
+
+    print(bannerHeight);
     final banner = BannerAd(
-      adUnitId: 'demo-banner-yandex',
+      adUnitId: 'demo-interstitial-yandex',
       // Flex-size
-      adSize: AdSize.flexible(width: MediaQuery.of(context).size.width.toInt(), height: MediaQuery.of(context).size.height.toInt() ~/ 10),
+      adSize: AdSize.flexible(width: MediaQuery.of(context).size.width.toInt(), height: bannerHeight.toInt()),
       // Sticky-size
       //adSize: AdSize.sticky(width: MediaQuery.of(context).size.width.toInt()),
       adRequest: const AdRequest(),
@@ -102,25 +124,6 @@ class _GameScreenState extends State<GameScreen> {
         /* Do something */
       },
     );
-
-    Settings settings = Hive.box<Settings>('settings').values.first;
-    var lang = settings.language;
-    var theme = settings.theme;
-
-    final timerFieldHeight = MediaQuery.of(context).size.width / 4.5;
-
-    final dividerHeight = MediaQuery.of(context).size.height / 25;
-
-    final cellSize = MediaQuery.of(context).size.width / (sudoku.size() + 2);
-    final tableFontSize = MediaQuery.of(context).size.width / 6 / sudoku.subSize();
-    final noteInCellWidth = cellSize / sudoku.subSize(), noteInCellHeight = cellSize / (sudoku.subSize() + 0.5);
-    final noteFontSize = tableFontSize * 1.3 / sudoku.subSize();
-
-    final numberButtonFontSize = MediaQuery.of(context).size.width / 15;
-    final numberButtonSize = MediaQuery.of(context).size.width / (min(kMaxButtonsInRow, sudoku.size()) + 2);
-
-    final actionButtonSize = MediaQuery.of(context).size.width / 3.5;
-    final actionButtonFontSize = MediaQuery.of(context).size.width / 30;
 
     return ValueListenableBuilder(
         valueListenable: widget.game.isSolved,

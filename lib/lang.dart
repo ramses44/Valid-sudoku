@@ -163,10 +163,10 @@ Map labels = {
   'About text': {
     'EN': 'Application "Valid Sudoku".\n\n'
           'It was developed as part of a course project by Roman Sakharov, a student of the Faculty of Computer Science at the Higher School of Economics \n\n'
-          'Application source code: ',
+          'Application source code: https://github.com/ramses44/Valid-sudoku',
     'RU': 'Приложение «Валидное судоку».\n\n'
           'Было разработано в рамках курсового проекта студентом факультета компьютерных наук НИУ ВШЭ Сахаровым Романом \n\n'
-          'Исходный код приложения: '
+          'Исходный код приложения: https://github.com/ramses44/Valid-sudoku'
   },
 
   'Rules text': {

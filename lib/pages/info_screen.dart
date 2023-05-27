@@ -12,15 +12,8 @@ class InfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labelFontSize = MediaQuery.of(context).size.width / 20;
-    final dividerHeight = MediaQuery.of(context).size.height / 30;
-
-    final buttonFontSize = MediaQuery.of(context).size.width / 17;
     final buttonWidth = MediaQuery.of(context).size.width / 1.7;
-    final buttonHeight = dividerHeight * 2.5;
-
     final infoLabelWidth = MediaQuery.of(context).size.width / 1.2;
-    final infoLabelMaxHeight = MediaQuery.of(context).size.height / 1.2;
 
     Settings settings = Hive.box<Settings>('settings').values.first;
     var lang = settings.language;
@@ -53,12 +46,10 @@ class InfoScreen extends StatelessWidget {
                         border: Border.all(color: themes[theme]['btnBorderClr'], width: 1),
                         color: themes[theme]['statLabelClr']
                     ),
-                    child: Expanded(
                       child: SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           child: _widget
                       ),
-                    )
                 ),
               )
             )

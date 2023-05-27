@@ -8,6 +8,7 @@ import 'package:valid_sudoku/pages/stat_screen.dart';
 import 'package:valid_sudoku/themes.dart';
 import '../backend/sudoku.dart';
 import 'package:valid_sudoku/lang.dart';
+import 'package:flutter/services.dart';
 
 import 'info_screen.dart';
 
@@ -25,11 +26,16 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown
+    ]);
+
     return ValueListenableBuilder(valueListenable: Hive.box<Settings>('settings').listenable(), builder: (context, box, _) {
-      final labelFontSize = MediaQuery.of(context).size.width / 20;
+      final labelFontSize = MediaQuery.of(context).size.height / 41;
       final dividerHeight = MediaQuery.of(context).size.height / 30;
 
-      final buttonFontSize = MediaQuery.of(context).size.width / 17;
+      final buttonFontSize = MediaQuery.of(context).size.height / 32;
       final buttonWidth = MediaQuery.of(context).size.width / 1.7;
       final buttonHeight = dividerHeight * 2.5;
 
@@ -85,6 +91,7 @@ class _MainScreenState extends State<MainScreen> {
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(top: labelFontSize / 1.5),
                           child: DropdownButtonFormField(
+                              isDense: false,
                               decoration: InputDecoration(
                                 focusedBorder: OutlineInputBorder(
                                   borderSide:
@@ -144,6 +151,7 @@ class _MainScreenState extends State<MainScreen> {
                           alignment: Alignment.center,
                           padding: EdgeInsets.only(top: labelFontSize / 1.5),
                           child: DropdownButtonFormField(
+                              isDense: false,
                               decoration: InputDecoration(
                                 focusedBorder: OutlineInputBorder(
                                   borderSide:
@@ -175,7 +183,7 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                               ))
                                   .toList())),
-                      Divider(height: buttonHeight),
+                      Divider(height: dividerHeight * 2),
                       SizedBox(
                           width: buttonWidth,
                           height: buttonHeight,
