@@ -75,5 +75,43 @@ List themes = [
     'actionBtnTextClr': Colors.white70,
 
     'statLabelClr': Colors.grey,
+  },
+
+  {
+    'themeName': 'mint',
+    'appBarBackgroundClr': Colors.green,
+    'appBarTextClr': Colors.white,
+    'appBackgroundClr': Colors.green.shade200,
+    'dialogBackgroundClr': Colors.green.shade400,
+
+    'primaryTextClr': Colors.white,
+    'secondaryTextClr': Colors.white70,
+    'congratulationsTextClr': Colors.orange,
+
+    'btnBorderClr': Colors.greenAccent,
+    'btnBorderClrDisabled': Colors.grey.shade400,
+    'btnClr': Colors.greenAccent.shade200,
+    'btnClrDisabled': Colors.grey.shade400,
+
+    'timerLabelClr': Colors.grey,
+    'timerLabelTextClr': Colors.white70,
+
+    'tableBorderClr': Colors.black87,
+    'tablePrimarySelectedClr': Colors.black54,
+    'tableSecondarySelectedClr': Colors.black26,
+    'tableInitialTextClr': Colors.white,
+    'tableGuessedTextClr': Colors.grey.shade500,
+    'tableWrongTextClr': Colors.red.shade400,
+    'tableNoteTextClr': Colors.grey.shade700,
+
+    'numberBtnClr': Colors.greenAccent,
+    'numberBtnClrSelected': Colors.lightGreenAccent,
+    'numberBtnTextClr': Colors.white,
+
+    'actionBtnClr': Colors.greenAccent,
+    'actionBtnClrSelected': Colors.lightGreenAccent,
+    'actionBtnTextClr': Colors.white,
+
+    'statLabelClr': Colors.greenAccent,
   }
 ];

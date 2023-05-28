@@ -81,6 +81,11 @@ class _StatScreenState extends State<StatScreen> {
                                         BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                         borderRadius: BorderRadius.circular(buttonWidth / 15),
                                       ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide:
+                                        BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                        borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                      ),
                                       filled: true,
                                       fillColor: themes[theme]['btnClr'],
                                     ),
@@ -123,6 +128,11 @@ class _StatScreenState extends State<StatScreen> {
                                         borderRadius: BorderRadius.circular(buttonWidth / 15),
                                       ),
                                       border: OutlineInputBorder(
+                                        borderSide:
+                                        BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                        borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
                                         borderSide:
                                         BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                         borderRadius: BorderRadius.circular(buttonWidth / 15),

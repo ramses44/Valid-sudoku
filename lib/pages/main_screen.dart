@@ -19,10 +19,32 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   static const availableSizes = [4, 9, 16];
   int? selectedSize = availableSizes[1];
   Difficulty? selectedDifficulty = Difficulty.medium;
+
+
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    print(1);
+    switch (state) {
+      case AppLifecycleState.resumed:
+      // widget is resumed
+        break;
+      case AppLifecycleState.inactive:
+      // widget is inactive
+        break;
+      case AppLifecycleState.paused:
+      // widget is paused
+        break;
+      case AppLifecycleState.detached:
+      // widget is detached
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +125,11 @@ class _MainScreenState extends State<MainScreen> {
                                   BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                   borderRadius: BorderRadius.circular(buttonWidth / 15),
                                 ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                  BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                  borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                ),
                                 filled: true,
                                 fillColor: themes[theme]['btnClr'],
                               ),
@@ -159,6 +186,11 @@ class _MainScreenState extends State<MainScreen> {
                                   borderRadius: BorderRadius.circular(buttonWidth / 15),
                                 ),
                                 border: OutlineInputBorder(
+                                  borderSide:
+                                  BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                  borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                ),
+                                enabledBorder: OutlineInputBorder(
                                   borderSide:
                                   BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                   borderRadius: BorderRadius.circular(buttonWidth / 15),

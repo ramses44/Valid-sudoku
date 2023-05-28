@@ -23,7 +23,7 @@ class GameScreen extends StatefulWidget {
   State<GameScreen> createState() => _GameScreenState();
 }
 
-class _GameScreenState extends State<GameScreen> {
+class _GameScreenState extends State<GameScreen> with WidgetsBindingObserver {
   int? xSelected, ySelected;
   int? numberSelected;
   bool notesMode = false;
@@ -35,6 +35,7 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     MobileAds.initialize();
+    WidgetsBinding.instance.addObserver(this);
 
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!paused) {
@@ -54,7 +55,17 @@ class _GameScreenState extends State<GameScreen> {
     return widget.game.sudoku.value;
   }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.paused) {
+      _pause();
+    }
+  }
+
   void _pause() {
+    setState(() => paused = true);
+
     Settings settings = Hive.box<Settings>('settings').values.first;
     var lang = settings.language;
     var theme = settings.theme;
@@ -141,7 +152,7 @@ class _GameScreenState extends State<GameScreen> {
                       title: Text(
                         "${widget.game.sudoku.value.size()} x "
                         "${widget.game.sudoku.value.size()}, "
-                        "${difficultyToString(difficultyFromInt(widget.game.model.difficulty))}",
+                        "${labels[difficultyToString(difficultyFromInt(widget.game.model.difficulty))][lang]}",
                         style: TextStyle(color: themes[theme]['appBarTextClr']),
                       ),
                       centerTitle: true,
@@ -264,7 +275,7 @@ class _GameScreenState extends State<GameScreen> {
                       title: Text(
                         "${widget.game.sudoku.value.size()} x "
                         "${widget.game.sudoku.value.size()}, "
-                        "${difficultyToString(difficultyFromInt(widget.game.model.difficulty))}",
+                        "${labels[difficultyToString(difficultyFromInt(widget.game.model.difficulty))][lang]}",
                         style: TextStyle(color: themes[theme]['appBarTextClr']),
                       ),
                       centerTitle: true,
@@ -275,10 +286,7 @@ class _GameScreenState extends State<GameScreen> {
                       actions: [
                         IconButton(
                             icon: Icon(Icons.pause, color: themes[theme]['appBarTextClr']),
-                            onPressed: () => setState(() {
-                                  paused = true;
-                                  _pause();
-                                })),
+                            onPressed: _pause),
                       ],
                     ),
                     body: Container(

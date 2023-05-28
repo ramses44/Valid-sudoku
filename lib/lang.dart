@@ -120,6 +120,11 @@ Map labels = {
     'RU': 'Тёмная'
   },
 
+  'mint': {
+    'EN': 'Mint',
+    'RU': 'Мятная'
+  },
+
   'Statistics': {
     'EN': 'Statistics',
     'RU': 'Статистика'

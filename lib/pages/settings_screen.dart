@@ -67,6 +67,11 @@ class SettingsScreen extends StatelessWidget {
                                       BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                       borderRadius: BorderRadius.circular(buttonWidth / 15),
                                     ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                      borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                    ),
                                     filled: true,
                                     fillColor: themes[theme]['btnClr'],
                                   ),
@@ -105,6 +110,11 @@ class SettingsScreen extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(buttonWidth / 15),
                                     ),
                                     border: OutlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                      borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
                                       borderSide:
                                       BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                       borderRadius: BorderRadius.circular(buttonWidth / 15),
@@ -159,6 +169,11 @@ class SettingsScreen extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(buttonWidth / 15),
                                     ),
                                     border: OutlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
+                                      borderRadius: BorderRadius.circular(buttonWidth / 15),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
                                       borderSide:
                                       BorderSide(color: themes[theme]['btnBorderClr'], width: 1),
                                       borderRadius: BorderRadius.circular(buttonWidth / 15),
