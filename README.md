@@ -1,16 +1,19 @@
-# valid_sudoku
+# Валидное судоку (Valid Sudoku)
 
-A new Flutter project.
+Приложение было разработано в рамках курсового проекта студентом 2 курса ПМИ НИУ ВШЭ Сахаровым Романом
 
-## Getting Started
+## Аннотация
 
-This project is a starting point for a Flutter application.
+Идея проекта заключается в создании мобильного приложения для игры в судоку. Для разработки был выбран фреймворк Flutter, благодаря чему приложение получилось кроссплатформенным.
 
-A few resources to get you started if this is your first Flutter project:
+Файлы программного кода можно условно разделить на backend- и frontend-часть. На уровне бэкэнда в программе реализован алгоритм генерации валидных судоку разного размера и сложности, представление судоку в программе, а также механизмы взаимодействия с базой данных, предназначенной для хранения информации о предыдущих играх.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Frontend был реализован в виде нескольких классов, описывающих отдельные окна приложения и их взаимодействие и обращение к интерфейсам, предоставленным классами, описанными в бэкэнде.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Помимо непосредственно игрового интерфейса для решения генерируемых программой судоку пользователю предоставляется доступ к его статистике по играм, а также выбор темы оформления.
+
+Продукт монетизируется за счёт баннерной рекламы от Яндекса.
+
+Итоговое приложение доступно в магазине RuStore по ссылке https://apps.rustore.ru/app/com.ramses44.valid_sudoku.
+
+
